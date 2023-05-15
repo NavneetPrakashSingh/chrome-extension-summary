@@ -1,6 +1,6 @@
 {
-    "name": "Chrome Extension MV3",
-    "description": "Building a Chrome Extension MV3",
+    "name": "OneLaunch Summary",
+    "description": "Summary for Onelaunch news URLs",
     "version": "0.1.0",
     "manifest_version": 3,
     "icons": {
@@ -29,7 +29,9 @@
         "scripting"
     ],
     "host_permissions": [
-        "https://www.google.com/*",        
+        "https://www.google.com/*",     
+        "https://www.techcrunch.com/*",
+        "http://yupdlekmfs.us12.qoddiapp.com/*",        
 		"https://*/*",
 		"http://*/*"
     ]

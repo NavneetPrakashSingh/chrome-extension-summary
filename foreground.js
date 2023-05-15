@@ -1,10 +1,9 @@
 const url = window.location.href;
-alert(url);
-if (url == "https://techcrunch.com/2023/05/01/crowd-control-interactive-stream/"){
-    alert("Matched");   
-}else{
-    alert("Not matched");
-}
+
+console.log('-----------------------------')
+console.log(getSummary())
+console.log('-----------------------------')
+
 const ce_main_container = document.createElement('DIV');
 const ce_name = document.createElement('DIV');
 const ce_input = document.createElement('INPUT');
@@ -29,7 +28,7 @@ chrome.runtime.sendMessage({
     message: "get_name"
 }, response => {
     if (response.message === 'success') {
-        ce_name.innerHTML = `Hello ${response.payload}`;
+        ce_name.innerHTML = `Url is `+ window.location.href;
     }
 });
 
@@ -43,3 +42,19 @@ ce_button.addEventListener('click', () => {
         }
     });
 });
+
+async function getSummary(){
+    const data = new FormData();
+data.append("url", "https://techcrunch.com/2023/05/01/crowd-control-interactive-stream/");
+
+const json = await fetch('https://yupdlekmfs.us12.qoddiapp.com/api/', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: data
+})
+.then(response => {
+    alert(Promise.resolve(response.json()));
+    // alert(response.json());
+})
+return json
+}
