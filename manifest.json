@@ -32,5 +32,11 @@
         "https://www.google.com/*",        
 		"https://*/*",
 		"http://*/*"
+    ],
+    "web_accessible_resources": [
+        {
+          "resources": [ "images/*" ],
+          "matches": ["<all_urls>"]
+        }
     ]
 }
