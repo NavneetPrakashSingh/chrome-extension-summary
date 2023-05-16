@@ -1,4 +1,3 @@
-const url = window.location.href;
 async function main(){
     let summary = await getSummary()
     console.log(summary);
@@ -78,7 +77,7 @@ async function main(){
         message: "get_name"
     }, response => {
         if (response.message === 'success') {
-            ce_summary.innerHTML = "<ul><li>The new feature provides an extra layer of security in these instances.The new feature comes a few weeks after WhatsApp added a few new updates around polls and sharing on its platform.</li><li>WhatsApp announced today that it’s introducing a new “Chat Lock” feature that is designed to give users an additional layer of security for their most intimate conversations.</li><li>You can lock a chat by tapping the name of a one-to-one or group and selecting the lock option.</li><li>As part of these updates, you now have the option to create single-vote polls, which means you can run a poll where people are only allowed to vote once.</li></ul>";
+            ce_summary.innerHTML = summary['html'];
         }
     });
 }
@@ -88,7 +87,7 @@ main()
 
 async function getSummary(){
     const data = new FormData();
-data.append("url", "https://techcrunch.com/2023/05/01/crowd-control-interactive-stream/");
+data.append("url", window.location.href);
 
 const response = await fetch('https://yupdlekmfs.us12.qoddiapp.com/api/', {
     method: 'POST',
