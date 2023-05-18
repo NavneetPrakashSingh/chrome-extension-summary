@@ -9,16 +9,19 @@ async function main(){
     document.querySelector('body').appendChild(ce_main_container);
 
     // Top row span
-    const ce_top_row = document.createElement('SPAN');
-    ce_top_row.style.padding = '3px';
+    const ce_top_row = document.createElement('DIV');
     ce_top_row.style.inline
+    ce_top_row.style.borderBottom = '1px solid lightgray';
+    ce_top_row.style.paddingBottom = '8px';
 
     // Logo
     const ce_logo_img = document.createElement('IMG');
     ce_logo_img.src = chrome.runtime.getURL('images/logo-48.png');
     ce_logo_img.alt = 'OneLaunch';
-    ce_logo_img.style.width = '30px';
-    ce_logo_img.style.height = '30px';
+    ce_logo_img.style.width = '25px';
+    ce_logo_img.style.height = '25px';
+    ce_logo_img.style.marginTop = '5px';
+    ce_logo_img.style.marginLeft = '2px';
 
     const ce_logo = document.createElement('DIV');
     ce_logo.style.float = 'left';
@@ -34,6 +37,8 @@ async function main(){
     ce_title.style.marginBottom = '0px';
     ce_title.style.paddingTop = '5px';
     ce_title.style.display = 'inline-block';
+    ce_title.style.fontWeight = 'bold';
+    ce_title.style.fontSize = '20px';
 
     ce_top_row.appendChild(ce_title);
 
@@ -42,11 +47,11 @@ async function main(){
     ce_exit.id = 'ce_exit'
     ce_exit.innerHTML = 'X';
     ce_exit.style.position = 'absolute';
-    ce_exit.style.top = '5px';
-    ce_exit.style.right = '5px';
+    ce_exit.style.top = '10px';
+    ce_exit.style.right = '9px';
     ce_exit.style.padding = '5px';
     ce_exit.style.cursor = 'pointer';
-    ce_exit.style.fontSize = '16px';
+    ce_exit.style.fontSize = '15px';
 
     ce_exit.addEventListener('click', function() {
       ce_main_container.style.display = 'none';
